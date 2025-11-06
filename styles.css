@@ -658,6 +658,57 @@ header::before {
             font-size: 0.9rem;
         }
 
+
+/* --- Sponsor Section --- */
+
+#sponsor {
+    background-color: transparent;
+}
+
+.sponsor-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    padding: 2rem;
+}
+
+.sponsor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg-off-white);
+    border-radius: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.sponsor-logo {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+.sponsor-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+
         /* --- 10. Responsive Design --- */
         
         @media (max-width: 768px) {
@@ -756,5 +807,23 @@ header::before {
             
             .contact-card span {
                 font-size: 0.85rem;
+            }
+
+            .sponsor-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1rem;
+            }
+            
+            .sponsor-card {
+                padding: 1.5rem;
+            }
+            
+            .sponsor-logo {
+                max-width: 200px;
+            }
+            
+            .sponsor-name {
+                font-size: 1.25rem;
             }
         }
