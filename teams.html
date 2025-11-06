@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams - Genesis Hackathon - GDG On Campus SATI</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Shortlisted and waiting list teams for Genesis Hackathon 2025.">
+    <meta name="keywords" content="hackathon, genesis, GDG, SATI, teams, shortlist, waiting list, innovation, coding, challenge">
+    <meta name="author" content="GDG On Campus SATI Vidisha">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Teams Page Specific Styles */
+        
+        .teams-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .teams-section {
+            background-color: var(--bg-off-white);
+            border-radius: 12px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .teams-section-header {
+            padding: 2rem 2rem 1.5rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid #eee;
+        }
+
+        .teams-section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .teams-section-title span:first-child {
+            color: var(--gdg-green);
+        }
+
+        .teams-section-title span:last-child {
+            color: var(--gdg-blue);
+        }
+
+        #waiting-list .teams-section-title span:first-child {
+            color: var(--gdg-green);
+        }
+
+        #waiting-list .teams-section-title span:last-child {
+            color: var(--gdg-blue);
+        }
+
+        .teams-section-content {
+            padding: 2rem;
+        }
+
+        .teams-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .teams-list li {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .teams-list li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .shortlist-item {
+            border-left-color: var(--gdg-green);
+        }
+
+        .shortlist-item:nth-child(1) { border-left-color: var(--gdg-blue); }
+        .shortlist-item:nth-child(2) { border-left-color: var(--gdg-red); }
+        .shortlist-item:nth-child(3) { border-left-color: var(--gdg-yellow); }
+        .shortlist-item:nth-child(4) { border-left-color: var(--gdg-green); }
+        .shortlist-item:nth-child(5) { border-left-color: var(--gdg-blue); }
+        .shortlist-item:nth-child(6) { border-left-color: var(--gdg-red); }
+        .shortlist-item:nth-child(7) { border-left-color: var(--gdg-yellow); }
+        .shortlist-item:nth-child(8) { border-left-color: var(--gdg-green); }
+        .shortlist-item:nth-child(9) { border-left-color: var(--gdg-blue); }
+        .shortlist-item:nth-child(10) { border-left-color: var(--gdg-red); }
+        .shortlist-item:nth-child(11) { border-left-color: var(--gdg-yellow); }
+        .shortlist-item:nth-child(12) { border-left-color: var(--gdg-green); }
+        .shortlist-item:nth-child(13) { border-left-color: var(--gdg-blue); }
+        .shortlist-item:nth-child(14) { border-left-color: var(--gdg-red); }
+        .shortlist-item:nth-child(15) { border-left-color: var(--gdg-yellow); }
+        .shortlist-item:nth-child(16) { border-left-color: var(--gdg-green); }
+        .shortlist-item:nth-child(17) { border-left-color: var(--gdg-blue); }
+        .shortlist-item:nth-child(18) { border-left-color: var(--gdg-red); }
+
+        .waiting-list-item {
+            border-left-color: var(--gdg-blue);
+        }
+
+        .waiting-list-item:nth-child(1) { border-left-color: var(--gdg-red); }
+        .waiting-list-item:nth-child(2) { border-left-color: var(--gdg-yellow); }
+        .waiting-list-item:nth-child(3) { border-left-color: var(--gdg-green); }
+        .waiting-list-item:nth-child(4) { border-left-color: var(--gdg-blue); }
+        .waiting-list-item:nth-child(5) { border-left-color: var(--gdg-red); }
+
+        .congratulations {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .congratulations-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .congratulations-text span:first-child {
+            color: var(--gdg-red);
+        }
+
+        .congratulations-text span:last-child {
+            color: var(--text-dark);
+        }
+
+        /* Single column layout for waiting list */
+        #waiting-list .teams-list {
+            grid-template-columns: 1fr;
+        }
+
+        @media (max-width: 768px) {
+            .teams-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .teams-section-title {
+                font-size: 1.5rem;
+            }
+
+            .teams-list {
+                grid-template-columns: 1fr;
+            }
+
+            .congratulations-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#hero">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#timeline">Timeline</a></li>
+                <li><a href="index.html#faq">FAQs</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="teams">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <h2 class="section-heading">Teams 🏆</h2>
+            <div class="teams-container">
+                <div class="teams-grid">
+                    <!-- Shortlisted Teams Section -->
+                    <div class="teams-section">
+                        <div class="teams-section-header">
+                            <h3 class="teams-section-title">
+                                <span>Shortlist</span>
+                                <span>Teams</span>
+                            </h3>
+                        </div>
+                        <div class="teams-section-content">
+                            <ul class="teams-list">
+                                <li class="shortlist-item">TechPulse</li>
+                                <li class="shortlist-item">Chronos Chrew</li>
+                                <li class="shortlist-item">resolve.exe</li>
+                                <li class="shortlist-item">CIVIC CODERS</li>
+                                <li class="shortlist-item">TEAM RESOLVERS</li>
+                                <li class="shortlist-item">UDAAN</li>
+                                <li class="shortlist-item">HEALTECH</li>
+                                <li class="shortlist-item">ORYN</li>
+                                <li class="shortlist-item">webgenie</li>
+                                <li class="shortlist-item">Aegis Crew</li>
+                                <li class="shortlist-item">Buddies n0t f0und</li>
+                                <li class="shortlist-item">Astra Minds</li>
+                                <li class="shortlist-item">SPARK</li>
+                                <li class="shortlist-item">Luminax</li>
+                                <li class="shortlist-item">Techno Titans</li>
+                                <li class="shortlist-item">Karm Coders</li>
+                                <li class="shortlist-item">Code Blooded</li>
+                                <li class="shortlist-item">AI COP</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Waiting List Teams Section -->
+                    <div class="teams-section" id="waiting-list">
+                        <div class="teams-section-header">
+                            <h3 class="teams-section-title">
+                                <span>Waiting</span>
+                                <span>list Teams</span>
+                            </h3>
+                        </div>
+                        <div class="teams-section-content">
+                            <ul class="teams-list">
+                                <li class="waiting-list-item">CODE HUNT&lt;&gt;</li>
+                                <li class="waiting-list-item">NeXt Us</li>
+                                <li class="waiting-list-item">Codevision</li>
+                                <li class="waiting-list-item">Unveil</li>
+                                <li class="waiting-list-item">Bugbusters</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="congratulations">
+                    <h3 class="congratulations-text">
+                        <span>Congratulations</span>
+                        <span>Teams..</span>
+                    </h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Google Developer Groups On Campus SATI Vidisha. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
